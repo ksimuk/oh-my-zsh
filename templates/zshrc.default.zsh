@@ -52,7 +52,7 @@ export UPDATE_ZSH_DAYS=7
 
 ZSH_TMUX_AUTOSTART=true
 
-plugins=(tmux archlinux systemd command-not-found sudo git colored-man zsh-syntax-highlighting colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
+plugins=(tmux archlinux systemd sudo git colored-man zsh-syntax-highlighting colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
