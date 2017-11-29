@@ -49,8 +49,12 @@ export UPDATE_ZSH_DAYS=7
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-
-ZSH_TMUX_AUTOSTART=true
+if [[ "$VSCODE_CLI" != "1" ]] then
+  ZSH_TMUX_AUTOSTART=true
+else
+  ZSH_TMUX_AUTOSTART=false
+  ZSH_TMUX_AUTOCONNECT=false
+fi
 
 plugins=(tmux archlinux systemd sudo git colored-man zsh-syntax-highlighting colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
 
@@ -74,4 +78,4 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source $ZSH/plugins/history-substring-search/history-substring-search.zsh
+#source $ZSH/plugins/history-substring-search/history-substring-search.zsh

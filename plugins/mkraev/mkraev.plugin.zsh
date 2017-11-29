@@ -43,6 +43,7 @@ alias cp='cp --reflink=auto'
 alias copy='gpaste-client <'
 alias clean_color='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 alias mpv-nv='mpv --profile=no-video'
+alias gmpv='gnome-mpv --enqueue '
 #escape urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
