@@ -38,9 +38,13 @@ alias rmf='rm -f'
 alias rmrf='rm -fR'
 alias df='df -h'
 alias du='du -h'
-alias cp='cp --reflink=auto'
+#alias cp='cp --reflink=auto'
 
-alias copy='gpaste-client <'
+if [[ "${TERM_PROGRAM}" == "iTerm.app" ]]; then
+  alias copy='pbcopy <'
+else
+  alias copy='gpaste-client <'
+fi
 alias clean_color='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 alias mpv-nv='mpv --profile=no-video'
 alias gmpv='gnome-mpv --enqueue '
@@ -56,12 +60,15 @@ if [[ -x `which pacman` ]]; then
   export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
   export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 fi
-
-if [[ -x `which subl3` ]]; then
-    alias s=subl3
+if [[ "${TERM_PROGRAM}" == "iTerm.app" ]]; then
+  export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+  export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+fi
+if [[ -x `which subl` ]]; then
+    alias s=subl
 fi
 if [ "$SSH_TTY$DISPLAY" = "${DISPLAY#*:[1-9][0-9]}" ]; then
-  export EDITOR=gedit
+  export EDITOR='subl -w -n '
 else
   export EDITOR=vim
 fi

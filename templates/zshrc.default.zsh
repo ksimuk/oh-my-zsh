@@ -56,7 +56,13 @@ else
   ZSH_TMUX_AUTOCONNECT=false
 fi
 
-plugins=(tmux archlinux systemd sudo git colored-man zsh-syntax-highlighting colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
+if [[ "${TERM_PROGRAM}" == "iTerm.app" ]]; then
+# mac os
+  plugins=( macports sudo git common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev )
+else
+# linux
+  plugins=(tmux archlinux systemd sudo git colored-man zsh-syntax-highlighting colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
+fi
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
