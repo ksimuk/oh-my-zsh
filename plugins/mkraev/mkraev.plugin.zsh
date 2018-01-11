@@ -57,11 +57,11 @@ zle -N bracketed-paste bracketed-paste-magic
 
 # if archlinux use gems in local folder
 if [[ -x `which pacman` ]]; then
-  export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+  export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
   export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 fi
 if [[ "${TERM_PROGRAM}" == "iTerm.app" ]]; then
-  export PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+  export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
   export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 fi
 if [[ -x `which subl` ]]; then
