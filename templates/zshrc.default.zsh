@@ -61,7 +61,7 @@ if [[ "${TERM_PROGRAM}" == "iTerm.app" ]]; then
   plugins=( macports sudo git common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev )
 else
 # linux
-  plugins=(tmux archlinux systemd sudo git colored-man zsh-syntax-highlighting colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
+  plugins=(tmux archlinux systemd sudo git colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
 fi
 
 source $ZSH/oh-my-zsh.sh
