@@ -20,7 +20,7 @@ fi
 
 HOST_PROPMPT=""
 if [[ -n $SSH_CONNECTION ]]; then
-    HOST_PROPMPT="%{$fg[cyan]%}%n@%m%{$reset_color%}:"
+    HOST_PROPMPT="%{$fg[cyan]%}%n@$(hostname -f)%{$reset_color%}:"
 fi
 
 PROMPT=$'%{$USER_PROMPT%}%{$HOST_PROPMPT%}%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}\n%{$PROMPT_PROMPT%}ᐅ%{$reset_color%} '
