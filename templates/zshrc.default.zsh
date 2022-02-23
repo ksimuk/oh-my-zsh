@@ -46,6 +46,9 @@ export UPDATE_ZSH_DAYS=7
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -58,10 +61,10 @@ fi
 
 if [[ "${TERM_PROGRAM}" == "iTerm.app" ]]; then
 # mac os
-  plugins=( macports sudo git common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev )
+  plugins=(macports sudo git common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev )
 else
 # linux
-  plugins=(tmux archlinux systemd sudo git colorize common-aliases cp extract history vagrant history-substring-search autojump systemadmin npm mkraev)
+  plugins=(tmux archlinux systemd sudo git colorize common-aliases cp extract history vagrant history-substring-search systemadmin npm mkraev)
 fi
 
 source $ZSH/oh-my-zsh.sh
